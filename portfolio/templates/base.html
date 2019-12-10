@@ -1,0 +1,84 @@
+<!DOCTYPE html>{% load static %} {% load bootstrap4 %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dan | {{title}} </title>
+
+    {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/default.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/default.7ca12d0a4d4c.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/component.e2149853cde0.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/static/js/modernizr.custom.c694b0251bf7.js"></script>
+    <link rel="stylesheet" href="/static/css/animate.d96b2083b0ac.css">
+    <link href='https://fonts.googleapis.com/css?family=Carme' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Julius Sans One' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="/static/css/styles.db6c11c8a1ea.css"> {% endblock %}
+</head>
+
+<body id="top">
+    <!-- Navigation -->
+    {% include 'navbar.html' %} {% block content %} {% endblock %} {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    {% bootstrap_javascript %}
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/jquery.lettering.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering();
+        })
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116285755-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-116285755-2');
+    </script>
+    <!-- <script src="/static/js/modernizr.custom.c694b0251bf7.js"></script> -->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.98d2c1da1c0a.js"></script>
+    <!-- <script src="/static/js/jquery.lettering.a2d5ce006f24.js"></script> -->
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                // document.getElementById("scroll-top").style.display = "block";
+                $('#scroll-top').style.display = 'block';
+            } else {
+                // document.getElementById("scroll-top").style.display = "none";
+                $('#scroll-top').style.display = 'none';
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    {% endblock %}
+</body>
+
+</html>

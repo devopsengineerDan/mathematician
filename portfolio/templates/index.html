@@ -1,0 +1,177 @@
+{% extends 'base.html' %} {% load static %} {% load bootstrap4 %}
+<head>
+    <title>Dan | </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/default.7ca12d0a4d4c.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/component.e2149853cde0.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/animate.d96b2083b0ac.css">
+    <link href='https://fonts.googleapis.com/css?family=Carme' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Julius Sans One' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="/static/css/styles.db6c11c8a1ea.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116285755-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-116285755-2');
+    </script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+{% block content %}
+<div class="container-fluid header">
+    <!-- Codrops top bar -->
+    <div class="os-phrases" id="os-phrases">
+        <h2>Nothing</h2>
+        <h2>is </h2>
+        <h2>random</h2>
+    </div>
+    <section id="section05" class="demo">
+        <a href="#projects" class="js-scroll-trigger">
+            <span></span>
+        </a>
+    </section>
+</div>
+<!-- /container -->
+<div class="container-fluid portfolio-details" id="projects">
+
+    <div class="row project-content">
+        <div class="col-md-12 section-heading">
+            <h1 class="text-center">Projects</h1>
+        </div>
+        {% for project in projects %}
+        <div class="col-md-3 project-details">
+            <a href="https://.herokuapp.com/" target="_blank">
+                <img src="https://ucarecdn.com/b5b2aa22-f875-4c74-ad44-1733c7ffaaf5/-/crop/1699x956/100,0/-/preview/" alt="Image Loading" class="img-responsive">
+            </a>
+            <h3>
+                <a href="{{project.url}}">{{project.name}}</a>
+            </h3>
+            <p> {{project.description}} </p>
+            <a href="{{project.homepage}}" target="_blank">View site</a>
+        </div>
+        {% empty %}
+        <div class="col-md-12">
+            <h6 class="text-center">To view projects click the link</h6>
+        </div>
+        {% endfor %}
+        <div class="col-md-9">
+            <p class="text-right">
+                <a href="/repos/">View projects &rarr;</a>
+            </p>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container portfolio-details" id="skills">
+    <div class="row project-content">
+        <div class="col-md-12 section-heading">
+            <h1 class="text-center">Skills</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 images-details">
+            <img src="{% static 'img/python1.png' %}" alt="python">
+        </div>
+        <div class="col-md-6 images-details">
+            <img src="{% static 'img/rust.png' %}" alt="rust">
+        </div>
+        <div class="col-md-6 images-details">
+            <img src="{% static 'img/django.jpeg' %}" alt="django">
+        </div>
+        <div class="col-md-6 images-details">
+            <img src="{% static 'img/flask.png' %}" alt="flask">
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container portfolio-details" id="contact">
+    <div class="row project-content">
+        <div class="col-md-6 no-padding">
+            <h1 class="text-center topics">Personal info</h1>
+            <div class="profile-details">
+                <h2 style="margin-top: 10px;" style="margin-left: 150px;">Dan</h2>
+                <p>Computer Networks, Cybersecurity, Artificial Intelligence and Quantum Computing enthusiast</p>
+                <ul class="fh5co-social-icons" style="margin-top: 30px;" style="margin-left: 60px;" class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="tel:+254-711-444-518" target="_blank">
+                            <i class="fa fa-phone fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://web.whatsapp.com/send?phone=+254711444518" target="_blank">
+                            <i class="fa fa-whatsapp fa-2x"></i>
+                        </a>
+                    </li> 
+                    <li class="list-inline-item">
+                        <a href="mailto:dancunmoruri@gmail.com">
+                            <i class="fa fa-envelope-square fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/in/dancun-manyinsa-42518a17b/" target="_blank">
+                            <i class="fa fa-linkedin fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/DanMoruri" target="_blank">
+                            <i class="fa fa-facebook fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.github.com/DancunManyinsa" target="_blank">
+                            <i class="fa fa-github fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="profile-details">
+                <h2 style="margin-top: 10px;" style="margin-left: 150px;">Hobbies</h2>
+                <p style="margin-top: 10px;">Computing research</p>
+                <p>Socializing</p>
+                <p>Robotics</p>
+            </div>
+        </div>
+        <div class="col-md-6 no-padding">
+            <h1 class="text-center topics">Contact</h1>
+            <h6 style="margin-top: 30px;" class="text-center">Mathematician and Software Engineer</h6>
+            <form method="post" action="">
+                {% csrf_token %}
+                <input type='hidden' name='csrfmiddlewaretoken' value='4P6rc57MaOhnfNBrt4xH6LFuUPkvLIX5IoMX8zd18lbB345lUJVpO4oG0OIiOB4k' />
+                <div class="form-group"><label for="id_name"></label><input type="text" name="name" maxlength="30" class="form-control" placeholder="Name" title="" required id="id_name" /></div>
+                <div class="form-group"><label for="id_email"></label><input type="text" name="email" maxlength="254" class="form-control" placeholder="Email" title="" required id="id_email" /></div>
+                <div class="form-group"><label for="id_subject"></label><input type="text" name="subject" maxlength="254" class="form-control" placeholder="Subject" title="" required id="id_subject" /></div>
+                <div class="form-group"><label for="id_message"></label><textarea type="text" name="message" cols="40" rows="10" maxlength="500" class="form-control" placeholder="Message" title="" required id="id_message"></textarea></div>
+                <div class="form-group btn-submit">
+                    <input type="submit" id='email-send' class="btn btn-outline-primary animated slow bounce infinite" value="Send" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<hr>
+<footer>
+    <div class="row project-content">
+        <div class="col-sm-8 no-padding">
+            <p style="margin-left: 70px;">Copyright &copy; 2019. All rights reserved </p>
+        </div>
+    </div>
+</footer>
+{% endblock %}
