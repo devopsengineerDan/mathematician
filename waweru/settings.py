@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-MODE=config("MODE", default="dev")
+MODE=config("MODE", default="production")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)s'
@@ -16,7 +16,7 @@ GITHUB_API = '4f41ea34f379e4e0dc151e6964c6468f4807e3c5'
 #GMAIL_API = 'AIzaSyDV8wYbkgkx0jxIMu306YqMtQBP4mdi8uE'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*']
 
@@ -72,34 +72,34 @@ WSGI_APPLICATION = 'waweru.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfolio',
-        'USER': 'dan',
-        'PASSWORD': 'phoenix',
+        'NAME': '',
+        'USER': '',
+        'PASSWORD': '',
         
     }
 }
+'''
 
-
-# if config('MODE')=="dev":
-#     DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': '',
-#         'USER':'',
-#         'PASSWORD':''
-#     }
-# }
-# # production
-# else:
-#    DATABASES = {
-#        'default': dj_database_url.config(
-#            default=config('DATABASE_URL')
-#        )
-#     }
+ if config('MODE')=="dev":
+     DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': '',
+         'USER':'',
+        'PASSWORD':''
+     }
+ }
+ # production
+ else:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+     }
 
 
 
