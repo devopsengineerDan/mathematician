@@ -78,19 +78,19 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': '',
         'USER': '',
-        'PASSWORD': '',
+        'PASSWORD': ''
         
     }
 }
-'''
 
+'''
  if config('MODE')=="dev":
      DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.postgresql',
          'NAME': '',
          'USER':'',
-        'PASSWORD':''
+         'PASSWORD':''
      }
  }
  # production
